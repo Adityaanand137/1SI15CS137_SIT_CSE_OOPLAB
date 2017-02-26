@@ -1,0 +1,65 @@
+/*QUSTION:1
+Write a C++ program to create a class to represent entities of type Circle, specified
+by its attributes radius and coordinates of its center. Include appropriate
+Constructors and display methods. Also write a friend function that determines
+whether two circles intersect one another or they touch each other or they are
+disjoint.*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+#include <cmath>
+using namespace std;
+class CircleType
+{
+    private:
+        int iRadius;
+        double dCirc, dArea;
+        
+    public:
+        void fnSetRadius(int);
+        void fnShowDetails();
+        void fnCalcCirc();
+        void fnCalcArea();
+};
+
+CircleType :: CircleType()
+{
+
+}
+
+void CircleType :: fnSetRadius(int iR)
+{
+    iRadius = iR;
+}
+    
+void CircleType :: fnShowDetails()
+{
+    cout << "\nRadius : " << iRadius;
+    cout << "\nCircumference : " << dCirc;
+    cout << "\nArea : " << dArea;
+}
+
+void CircleType :: fnCalcCirc()
+{
+    dCirc = 2 * M_PI * iRadius;
+}
+
+void CircleType :: fnCalcArea()
+{
+    dArea = M_PI * iRadius * iRadius;
+}
+
+int main(void)
+{
+    CircleType c1, c2;
+    
+    c1.fnSetRadius(7);
+    
+    c1.fnCalcCirc();
+    
+    c1.fnCalcArea();
+    
+    c1.fnShowDetails();
+    
+    return 0;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
